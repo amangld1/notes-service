@@ -34,3 +34,7 @@ PORT=9000 ./scripts/run.sh
 ```
 
 Exit code 0 means pass; the last line printed is `TESTS: n/n`.
+
+## Example
+
+Check that the service is alive: curl localhost:8080/healthz
