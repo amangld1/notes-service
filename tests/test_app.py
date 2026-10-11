@@ -25,7 +25,7 @@ class ServiceTests(unittest.TestCase):
 
     def test_root_returns_greeting(self):
         with self.get("/") as r:
-            self.assertEqual(r.status, 201)
+            self.assertEqual(r.status, 200)
             self.assertIn("Hello", r.read().decode())
 
     def test_healthz_is_ok_and_non_empty(self):
