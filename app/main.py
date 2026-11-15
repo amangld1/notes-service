@@ -22,7 +22,8 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = self.path.split("?", 1)[0]
         if path == "/":
-            self._send(200, "Hello from the notes service!\n", "text/plain; charset=utf-8")
+            greeting = os.environ.get("GREETING", "Hello from the notes service!")
+            self._send(200, greeting + "\n", "text/plain; charset=utf-8")
         elif path == "/healthz":
             self._send(200, "ok\n", "text/plain; charset=utf-8")
         elif path == "/notes":
